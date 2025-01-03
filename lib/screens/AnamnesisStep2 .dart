@@ -48,25 +48,39 @@ class Anamnesisstep2 extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: height * 0.01),
-                  const Text(
-                    'Todos los campos son obligatorios *',
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                  RichText(
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Todos los campos son obligatorios ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(height: height * 0.03),
                   _buildQuestion(
                     width,
-                    '¿Tiene dolores frecuentes y no ha consultado al médico? *',
+                    '¿Tiene dolores frecuentes y no ha consultado al médico? ',
                     'frequentPain',
                     formProvider,
                   ),
                   SizedBox(height: height * 0.03),
                   _buildQuestion(
                     width,
-                    '¿Le ha dicho el médico que tiene algún problema en los huesos o las articulaciones, que pueda desfavorecer con el ejercicio? *',
+                    '¿Le ha dicho el médico que tiene algún problema en los huesos o las articulaciones, que pueda desfavorecer con el ejercicio? ',
                     'boneIssues',
                     formProvider,
                   ),
@@ -126,11 +140,24 @@ class Anamnesisstep2 extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          question,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: question,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+              const TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.redAccent,
+                  fontSize: 16,
+                ),
+              ),
+            ],
           ),
         ),
         const SizedBox(height: 8),

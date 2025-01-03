@@ -20,7 +20,7 @@ class Anamnesisstep1 extends StatelessWidget {
         backgroundColor: Colors.black,
         titleColor: Colors.white,
         leadingIcon: Icons.arrow_back,
-        onLeadingPressed: (){
+        onLeadingPressed: () {
           Navigator.pop(context);
         },
       ),
@@ -45,20 +45,44 @@ class Anamnesisstep1 extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                const Text(
-                  'Todos los campos son obligatorios *',
-                  style: TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
+                RichText(
+                  text: const TextSpan(
+                    text: 'Todos los campos son obligatorios ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: '*',
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  '¿Ha tenido operaciones? ¿Cuáles y hace cuánto tiempo?*',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                RichText(
+                  text: const TextSpan(
+                    text:
+                        '¿Ha tenido operaciones? ¿Cuáles y hace cuánto tiempo? ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: '*',
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -79,11 +103,23 @@ class Anamnesisstep1 extends StatelessWidget {
                       : null,
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  '¿Tiene o tuvo alguna enfermedad diagnosticada o tratada por un médico?*',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                RichText(
+                  text: const TextSpan(
+                    text:
+                        '¿Tiene o tuvo alguna enfermedad diagnosticada o tratada por un médico? ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: '*',
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -118,7 +154,7 @@ class Anamnesisstep1 extends StatelessWidget {
           text: 'Siguiente',
           onPressed: formProvider.isValid
               ? () {
-                 Navigator.pushNamed(context, '/step2');
+                  Navigator.pushNamed(context, '/step2');
                 }
               : null,
           isEnabled: formProvider.isValid,
