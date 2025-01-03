@@ -18,7 +18,7 @@ class Anamnesisstep1 extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Bienvenido a tu nuevo comienzo',
         backgroundColor: Colors.black,
-        titleColor: Colors.white,
+        titleColor: const Color(0xFFC0C5E0),
         leadingIcon: Icons.arrow_back,
         onLeadingPressed: () {
           Navigator.pop(context);

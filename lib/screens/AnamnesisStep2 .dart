@@ -20,7 +20,7 @@ class Anamnesisstep2 extends StatelessWidget {
         appBar: CustomAppBar(
           title: 'Bienvenido a tu nuevo comienzo',
           backgroundColor: Colors.black,
-          titleColor: Colors.white,
+          titleColor: const Color(0xFFC0C5E0),
           leadingIcon: Icons.arrow_back,
           onLeadingPressed: () {
             Navigator.pop(context);
@@ -70,14 +70,14 @@ class Anamnesisstep2 extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: height * 0.04),
                   _buildQuestion(
                     width,
                     '¿Tiene dolores frecuentes y no ha consultado al médico? ',
                     'frequentPain',
                     formProvider,
                   ),
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: height * 0.04),
                   _buildQuestion(
                     width,
                     '¿Le ha dicho el médico que tiene algún problema en los huesos o las articulaciones, que pueda desfavorecer con el ejercicio? ',
